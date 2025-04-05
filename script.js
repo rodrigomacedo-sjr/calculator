@@ -1,3 +1,6 @@
+/*
+ *  Math
+ */
 const OPERATORS = ["+", "-", "*", "/", "%"];
 
 let numberA, numberB, operator;
@@ -43,3 +46,45 @@ function divide(a, b) {
   }
   return a / b;
 }
+
+/*
+ *  Draw calculator
+ */
+const NUMPAD = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "♥", "0", "."];
+const UTILS = ["C", "÷", "±", "×", "%", "-", "=", "+"];
+
+function drawCalculator() {
+  drawNumpad();
+  drawUtils();
+}
+
+function drawNumpad() {
+  const numpad = document.querySelector(".numbers");
+
+  for (let x of NUMPAD) {
+    let button = document.createElement("button");
+    button.textContent = x;
+    button.className = "num-button";
+    numpad.appendChild(button);
+  }
+}
+
+function drawUtils() {
+  const utils = document.querySelector(".utils");
+
+  for (let x of UTILS) {
+    let button = document.createElement("button");
+    button.textContent = x;
+    button.className = "utils-button";
+    utils.appendChild(button);
+  }
+}
+
+/*
+ *  User input and output
+ */
+
+/*
+ *  Setup
+ */
+drawCalculator();
