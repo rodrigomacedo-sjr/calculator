@@ -6,12 +6,12 @@ JavaScript, problem solving. Basic styling.
 # TODO
 
 - [x] Do the TODO list
-- [ ] Basic operations
-  - [ ] add
-  - [ ] subtract
-  - [ ] multiply
-  - [ ] divide
-- [ ] Set up numbes and operators
+- [X] Basic operations
+  - [x] add
+  - [x] subtract
+  - [x] multiply
+  - [x] divide
+- [ ] Set up numbers and operators
 - [ ] Basic HTML calculator with buttons (non functional)
 - [ ] Display
 - [ ] Function to populate display
@@ -29,5 +29,8 @@ JavaScript, problem solving. Basic styling.
 - [ ] Round answers
 - [ ] Divide by 0 errors
 - [ ] Result behaviour with new operations
+
+# Planning
+Numbers and operator may be set with a function. Useful for checking erros and status.
 
 # Insights
