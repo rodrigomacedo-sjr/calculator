@@ -11,7 +11,7 @@ JavaScript, problem solving. Basic styling.
   - [x] subtract
   - [x] multiply
   - [x] divide
-- [ ] Set up numbers and operators
+- [x] Set up numbers and operators
 - [ ] Basic HTML calculator with buttons (non functional)
 - [ ] Display
 - [ ] Function to populate display
