@@ -13,7 +13,7 @@ JavaScript, problem solving. Basic styling.
   - [x] divide
 - [x] Set up numbers and operators
 - [x] Basic HTML calculator with buttons (non functional)
-- [ ] Display
+- [x] Display
 - [ ] Function to populate display
 - [ ] Operate function
 

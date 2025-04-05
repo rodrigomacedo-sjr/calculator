@@ -1,4 +1,74 @@
-h1 {
-  font-size: 100px;
-  color: red;
+body {
+  height: 97vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.calculator {
+  width: 30%;
+  height: 70%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: lightgray;
+}
+
+.display {
+  width: 90%;
+  height: 20%;
+
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  font-size: 9vh;
+
+  background-color: whitesmoke;
+}
+
+.keypad {
+  width: 90%;
+  height: 80%;
+
+  display: flex;
+
+  background-color: whitesmoke;
+}
+
+.numbers {
+  width: 66%;
+}
+
+.utils {
+  width: 33%;
+}
+
+.numbers button {
+  width: 33%;
+  height: 20%;
+
+  background-color: gray;
+}
+
+.utils button {
+  width: 50%;
+  height: 20%;
+
+  background-color: orange;
+}
+
+<body>
+  <div class="calculator">
+    <div class="display"></div>
+    <div class="keypad">
+      <div class="numbers"></div>
+      <div class="utils"></div>
+    </div>
+  </div>
+
+
