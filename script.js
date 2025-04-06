@@ -47,6 +47,19 @@ function divide(a, b) {
   return a / b;
 }
 
+function rest(a, b) {
+  if (!b) {
+    throw new Error(`Invalid dividend ${n}`);
+  }
+
+  return a % b;
+}
+
+function invertSignal() {
+  let n = operator ? numberB : numberA;
+  setNumber(-n);
+}
+
 /*
  *  Draw calculator
  */
@@ -83,8 +96,53 @@ function drawUtils() {
 /*
  *  User input and output
  */
+function setupNumsButtonLogic() {
+  let numbers = document.querySelector(".numbers");
+
+  numbers.addEventListener("click", (e) => {
+    setNumber(e.target.textContent);
+  });
+}
+
+function setupUtilsButtonLogic() {
+  let utils = document.querySelector(".utils");
+
+  utils.addEventListener("click", (e) => {
+    try {
+      setOperator(e.target.textContent);
+    } catch (error) {
+      processUtil(e.target.textContent);
+    }
+  });
+}
+
+function processUtil(util) {
+  switch (util) {
+    case "C":
+      reset();
+      break;
+    case "±":
+      invertSignal();
+      break;
+  }
+}
+
+function reset() {
+  numberA = undefined;
+  numberB = undefined;
+  operator = undefined;
+
+  /* TODO: reset display */
+}
 
 /*
  *  Setup
  */
 drawCalculator();
+setupNumsButtonLogic();
+setupUtilsButtonLogic();
+
+const keypad = document.querySelector(".keypad");
+keypad.addEventListener("click", () => {
+  console.log(`${numberA} ${operator} ${numberB}`);
+});

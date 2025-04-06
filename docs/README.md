@@ -14,6 +14,7 @@ JavaScript, problem solving. Basic styling.
 - [x] Set up numbers and operators
 - [x] Basic HTML calculator with buttons (non functional)
 - [x] Display
+- [x] Set up button logic to update main variables
 - [ ] Function to populate display
 - [ ] Operate function
 
