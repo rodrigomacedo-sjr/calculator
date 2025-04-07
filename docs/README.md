@@ -21,7 +21,7 @@ JavaScript, problem solving. Basic styling.
 ## Extra
 
 - [x] Decimal point
-- [ ] Backspace button
+- [x] Backspace button
 - [ ] Keyboard support
 
 ## Personal Extra

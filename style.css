@@ -6,6 +6,10 @@ body {
   align-items: center;
 }
 
+button {
+  font-size: 2rem;
+}
+
 .calculator {
   width: 30%;
   height: 70%;
@@ -76,3 +80,4 @@ body {
 
   background-color: orange;
 }
+

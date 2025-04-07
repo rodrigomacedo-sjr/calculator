@@ -1,5 +1,5 @@
 /*
- *  Math
+ *  Math and validations
  */
 const OPERATORS = ["+", "-", "×", "÷", "%"];
 
@@ -19,23 +19,39 @@ function validateOperator(opr) {
   throw new Error(`Invalid operator ${opr}`);
 }
 
-function setNumber(num) {
-  if (num != ".") {
-    if (operator === undefined) {
-      numberA = numberA ? numberA + num : num;
-    } else {
-      numberB = numberB ? numberB + num : num;
+function handleNumpad(but) {
+  if (but === ".") handleDecimal();
+  else if (but === "←") handleBackspace();
+  else handleNums(but);
+}
+
+function handleNums(num) {
+  if (operator === undefined) {
+    numberA = numberA ? numberA + num : num;
+  } else {
+    numberB = numberB ? numberB + num : num;
+  }
+}
+
+function handleDecimal() {
+  if (operator === undefined) {
+    if (!String(numberA).includes(".")) {
+      numberA += ".";
     }
-  } else if (num === ".") {
-    if (operator === undefined) {
-      if (!String(numberA).includes(".")) {
-        numberA += ".";
-      }
-    } else {
-      if (!String(numberB).includes(".")) {
-        numberB += ".";
-      }
+  } else {
+    if (!String(numberB).includes(".")) {
+      numberB += ".";
     }
+  }
+}
+
+function handleBackspace() {
+  if (operator === undefined && numberA != 0) {
+    numberA = numberA.split("").slice(0, -1).join("");
+  } else if (operator !== undefined && numberB === undefined) {
+    operator = undefined;
+  } else {
+    numberB = numberB.split("").slice(0, -1).join("");
   }
 }
 
@@ -79,7 +95,7 @@ function invertSignal() {
 /*
  *  Draw calculator
  */
-const NUMPAD = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "♥", "0", "."];
+const NUMPAD = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "←", "0", "."];
 const UTILS = ["C", "÷", "±", "×", "%", "-", "=", "+"];
 
 function drawCalculator() {
@@ -116,7 +132,7 @@ function setupNumsButtonLogic() {
   let numbers = document.querySelector(".numbers");
 
   numbers.addEventListener("click", (e) => {
-    setNumber(e.target.textContent);
+    handleNumpad(e.target.textContent);
   });
 }
 
