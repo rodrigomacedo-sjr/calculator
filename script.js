@@ -20,10 +20,22 @@ function validateOperator(opr) {
 }
 
 function setNumber(num) {
-  if (operator === undefined) {
-    numberA = numberA ? numberA + num : num;
-  } else {
-    numberB = numberB ? numberB + num : num;
+  if (num != ".") {
+    if (operator === undefined) {
+      numberA = numberA ? numberA + num : num;
+    } else {
+      numberB = numberB ? numberB + num : num;
+    }
+  } else if (num === ".") {
+    if (operator === undefined) {
+      if (!String(numberA).includes(".")) {
+        numberA += ".";
+      }
+    } else {
+      if (!String(numberB).includes(".")) {
+        numberB += ".";
+      }
+    }
   }
 }
 
@@ -134,8 +146,8 @@ function processUtil(util) {
 }
 
 function reset() {
-  numberA = undefined;
-  numberB = undefined;
+  numberA = 0;
+  numberB = 0;
   operator = undefined;
 }
 
