@@ -21,9 +21,9 @@ function validateOperator(opr) {
 
 function setNumber(num) {
   if (operator === undefined) {
-    numberA = numberA ? Number(numberA + num) : num;
+    numberA = numberA ? numberA + num : num;
   } else {
-    numberB = numberB ? Number(numberB + num) : num;
+    numberB = numberB ? numberB + num : num;
   }
 }
 
@@ -60,8 +60,8 @@ function rest(a, b) {
 }
 
 function invertSignal() {
-  let n = operator ? numberB : numberA;
-  setNumber(-n);
+  numberA = operator ? numberA : -numberA;
+  numberB = operator ? -numberB : numberB;
 }
 
 /*
@@ -137,11 +137,12 @@ function reset() {
   numberA = undefined;
   numberB = undefined;
   operator = undefined;
-
-  /* TODO: reset display */
 }
 
 function calculate() {
+  numberA = Number(numberA);
+  numberB = Number(numberB);
+
   let result;
   switch (operator) {
     case "+":
@@ -166,7 +167,6 @@ function calculate() {
   }
   reset();
   numberA = result;
-  /* TODO: update display */
 }
 
 /*
