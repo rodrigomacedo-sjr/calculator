@@ -16,8 +16,7 @@ JavaScript, problem solving. Basic styling.
 - [x] Display
 - [x] Set up button logic to update main variables
 - [x] Utils buttons work and calculate properly
-- [ ] Function to populate display
-- [ ] Operate function
+- [X] Function to populate display
 
 ## Extra
 

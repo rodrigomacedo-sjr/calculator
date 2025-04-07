@@ -28,6 +28,7 @@ function setNumber(num) {
 }
 
 function setOperator(opr) {
+  if (!numberA) numberA = 0;
   operator = validateOperator(opr);
 }
 
@@ -97,7 +98,7 @@ function drawUtils() {
 }
 
 /*
- *  User input and output
+ *  User input processing
  */
 function setupNumsButtonLogic() {
   let numbers = document.querySelector(".numbers");
@@ -169,6 +170,14 @@ function calculate() {
 }
 
 /*
+ *  Display
+ */
+function updateDisplay() {
+  const display = document.querySelector(".display");
+  display.textContent = `${numberA ? numberA : 0} ${operator ? operator : ""} ${numberB ? numberB : ""}`;
+}
+
+/*
  *  Setup
  */
 drawCalculator();
@@ -176,6 +185,4 @@ setupNumsButtonLogic();
 setupUtilsButtonLogic();
 
 const keypad = document.querySelector(".keypad");
-keypad.addEventListener("click", () => {
-  console.log(`${numberA} ${operator} ${numberB}`);
-});
+keypad.addEventListener("click", updateDisplay);
