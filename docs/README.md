@@ -25,17 +25,20 @@ JavaScript, problem solving. Basic styling.
 - [ ] Keyboard support
 
 ## Personal Extra
-- [ ] Clean operator logic. Avoid hard values
-- [ ] Clean `setNumber` function. Make it readable
 - [ ] Style
 - [ ] Phone responsive
 
-## Beware
+## Bug fixes / Small improvements
 
 - [x] Calculator does not evaluate more than 2 numbers at the time
 - [x] Round answers
 - [x] Divide by 0 errors
 - [x] Result behaviour with new operations
+- [ ] Typing multiple zeroes behaviour is weird
+- [ ] After pressing `=`, pressing a number resets the state
+- [ ] After pressing `=`, pressing an operator reuses the result
+- [ ] Clean operator logic. Avoid hard values
+- [ ] Clean `setNumber` function. Make it readable
 
 # Planning
 
