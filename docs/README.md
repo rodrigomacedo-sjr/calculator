@@ -38,9 +38,9 @@ Numbers and operator may be set with a function. Useful for checking erros and s
 # Insights
 
 The current logic envolving operators and utils does not seem right. Hard values in the current way. \
-I want to find a better way to deal with this. \
+I want to find a better way to deal with this. 
 
-Wow I really wish I had unit tests here. Would make it all way easier.
+Wow I really wish I had unit tests here. Would make it all way easier. \
 
-Favorite development bug:
-![Shows a broken calculator app, With overflowing text with lots of 'NaN's in the display.](bug.png "Favorite bug");
+Favorite development bug: \
+![Shows a broken calculator app, With overflowing text with lots of 'NaN's in the display.](bug.png "Favorite bug")
