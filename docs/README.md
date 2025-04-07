@@ -29,7 +29,7 @@ JavaScript, problem solving. Basic styling.
 ## Beware
 
 - [x] Calculator does not evaluate more than 2 numbers at the time
-- [ ] Round answers
+- [x] Round answers
 - [x] Divide by 0 errors
 - [x] Result behaviour with new operations
 

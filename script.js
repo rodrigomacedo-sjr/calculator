@@ -178,7 +178,7 @@ function calculate() {
       break;
   }
   reset();
-  numberA = result;
+  numberA = Number(result.toFixed(3));
 }
 
 /*
