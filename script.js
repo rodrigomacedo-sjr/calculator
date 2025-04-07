@@ -1,7 +1,7 @@
 /*
  *  Math
  */
-const OPERATORS = ["+", "-", "*", "/", "%"];
+const OPERATORS = ["+", "-", "×", "÷", "%"];
 
 let numberA, numberB, operator;
 
@@ -20,6 +20,7 @@ function validateOperator(opr) {
 }
 
 function setNumber(num) {
+  num = Number(num);
   if (operator === undefined) numberA = num;
   else numberB = num;
 }
@@ -124,6 +125,8 @@ function processUtil(util) {
     case "±":
       invertSignal();
       break;
+    case "=":
+      calculate();
   }
 }
 
@@ -133,6 +136,34 @@ function reset() {
   operator = undefined;
 
   /* TODO: reset display */
+}
+
+function calculate() {
+  let result;
+  switch (operator) {
+    case "+":
+      result = add(numberA, numberB);
+      break;
+
+    case "-":
+      result = subtract(numberA, numberB);
+      break;
+
+    case "×":
+      result = multiply(numberA, numberB);
+      break;
+
+    case "÷":
+      result = divide(numberA, numberB);
+      break;
+
+    case "%":
+      result = rest(numberA, numberB);
+      break;
+  }
+  reset();
+  numberA = result;
+  /* TODO: update display */
 }
 
 /*
