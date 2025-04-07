@@ -38,7 +38,7 @@ JavaScript, problem solving. Basic styling.
 - [ ] After pressing `=`, pressing a number resets the state
 - [ ] After pressing `=`, pressing an operator reuses the result
 - [ ] Clean operator logic. Avoid hard values
-- [ ] Clean `setNumber` function. Make it readable
+- [x] Clean `setNumber` function. Make it readable
 
 # Planning
 
@@ -51,11 +51,13 @@ The plan is to improve this part on future projects.
 # Insights
 
 The current logic envolving operators and utils does not seem right. Hard values in the current way. \
-I want to find a better way to deal with this.
+I want to find a better way to deal with this. \
+This would be more readable and less error prone with some constants declared at the beggining.
 
 Wow I really wish I had unit tests here. Would make it all way easier.
 
-The `setNumber` function is really bothering me too. Want to improve it later.
+The `setNumber` function is really bothering me too. Want to improve it later. \
+This was handled finally. Separeted it's logic in smaller functions, it seems more readable.
 
 Favorite development bug: \
 ![Shows a broken calculator app, With overflowing text with lots of 'NaN's in the display.](bug.png "Favorite bug")
