@@ -20,9 +20,11 @@ function validateOperator(opr) {
 }
 
 function setNumber(num) {
-  num = Number(num);
-  if (operator === undefined) numberA = num;
-  else numberB = num;
+  if (operator === undefined) {
+    numberA = numberA ? Number(numberA + num) : num;
+  } else {
+    numberB = numberB ? Number(numberB + num) : num;
+  }
 }
 
 function setOperator(opr) {
