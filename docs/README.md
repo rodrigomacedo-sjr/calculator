@@ -23,8 +23,12 @@ JavaScript, problem solving. Basic styling.
 - [x] Decimal point
 - [ ] Backspace button
 - [ ] Keyboard support
+
+## Personal Extra
 - [ ] Clean operator logic. Avoid hard values
 - [ ] Clean `setNumber` function. Make it readable
+- [ ] Style
+- [ ] Phone responsive
 
 ## Beware
 
