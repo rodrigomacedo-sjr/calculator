@@ -37,9 +37,8 @@ JavaScript, problem solving. Basic styling.
 - [x] Result behaviour with new operations
 - [x] Typing multiple zeroes behaviour is weird
 - [x] Remove left zeroes
-- [ ] After pressing `=`, pressing a number resets the state
 - [x] After pressing `=`, pressing an operator reuses the result
-- [ ] Clean operator logic. Avoid hard values
+- [x] Clean operator logic. Avoid hard values
 - [x] Clean CSS. Avoid repetition
 - [x] Clean `setNumber` function. Make it readable
 
@@ -62,5 +61,13 @@ Wow I really wish I had unit tests here. Would make it all way easier.
 The `setNumber` function is really bothering me too. Want to improve it later. \
 This was handled finally. Separeted it's logic in smaller functions, it seems more readable.
 
+Removed one of the small improvements as a goal. The current logic feels simple and clean.
+
 Favorite development bug: \
 ![Shows a broken calculator app, With overflowing text with lots of 'NaN's in the display.](bug.png "Favorite bug")
+
+# Final thoughts
+
+Indeed I think the process would be smoother with good tests. But overall was a good experience to debug and improve the code many times on diferent iterations. Doing on my little breaks, even without internet and totally free from AI felt really nice.
+
+Looking forward to the other Odin Projects to challenge me even further.

@@ -4,8 +4,8 @@
 
 const DIVIDE_SYMBOL = "÷";
 const MULTIPLY_SYMBOL = "×";
-const PLUSMINUS_SYMBOL = "±"
-const BACK_SYMBOL = "←"
+const PLUSMINUS_SYMBOL = "±";
+const BACK_SYMBOL = "←";
 
 /*
  *  Math and validations
@@ -110,8 +110,30 @@ function invertSignal() {
 /*
  *  Draw calculator
  */
-const NUMPAD = ["7", "8", "9", "4", "5", "6", "1", "2", "3", BACK_SYMBOL, "0", "."];
-const UTILS = ["AC", DIVIDE_SYMBOL, PLUSMINUS_SYMBOL, MULTIPLY_SYMBOL, "%", "-", "=", "+"];
+const NUMPAD = [
+  "7",
+  "8",
+  "9",
+  "4",
+  "5",
+  "6",
+  "1",
+  "2",
+  "3",
+  BACK_SYMBOL,
+  "0",
+  ".",
+];
+const UTILS = [
+  "AC",
+  DIVIDE_SYMBOL,
+  PLUSMINUS_SYMBOL,
+  MULTIPLY_SYMBOL,
+  "%",
+  "-",
+  "=",
+  "+",
+];
 
 function drawCalculator() {
   drawNumpad();
