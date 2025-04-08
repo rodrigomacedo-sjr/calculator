@@ -1,7 +1,16 @@
 /*
+ *  Symbols
+ */
+
+const DIVIDE_SYMBOL = "÷";
+const MULTIPLY_SYMBOL = "×";
+const PLUSMINUS_SYMBOL = "±"
+const BACK_SYMBOL = "←"
+
+/*
  *  Math and validations
  */
-const OPERATORS = ["+", "-", "×", "÷", "%"];
+const OPERATORS = ["+", "-", MULTIPLY_SYMBOL, DIVIDE_SYMBOL, "%"];
 
 let numberA, numberB, operator;
 
@@ -22,7 +31,7 @@ function validateOperator(opr) {
 function handleNumpad(but) {
   if (but === ".") {
     handleDecimal();
-  } else if (but === "←") {
+  } else if (but === BACK_SYMBOL) {
     handleBackspace();
   } else if (but.length < 10) {
     handleNums(but);
@@ -101,8 +110,8 @@ function invertSignal() {
 /*
  *  Draw calculator
  */
-const NUMPAD = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "←", "0", "."];
-const UTILS = ["AC", "÷", "±", "×", "%", "-", "=", "+"];
+const NUMPAD = ["7", "8", "9", "4", "5", "6", "1", "2", "3", BACK_SYMBOL, "0", "."];
+const UTILS = ["AC", DIVIDE_SYMBOL, PLUSMINUS_SYMBOL, MULTIPLY_SYMBOL, "%", "-", "=", "+"];
 
 function drawCalculator() {
   drawNumpad();
@@ -123,11 +132,11 @@ function drawNumpad() {
 function drawUtils() {
   const utils = document.querySelector(".utils");
 
-  for (let x of UTILS) {
+  for (let symbol of UTILS) {
     let button = document.createElement("button");
-    button.textContent = x;
+    button.textContent = symbol;
     button.className = "utils-button";
-    if (["AC", "±", "%"].includes(x)) {
+    if (["AC", PLUSMINUS_SYMBOL, "%"].includes(symbol)) {
       button.classList.add("other-utils");
     }
     utils.appendChild(button);
@@ -162,7 +171,7 @@ function processUtil(util) {
     case "AC":
       reset();
       break;
-    case "±":
+    case PLUSMINUS_SYMBOL:
       invertSignal();
       break;
     case "=":
@@ -190,11 +199,11 @@ function calculate() {
       result = subtract(numberA, numberB);
       break;
 
-    case "×":
+    case MULTIPLY_SYMBOL:
       result = multiply(numberA, numberB);
       break;
 
-    case "÷":
+    case DIVIDE_SYMBOL:
       result = divide(numberA, numberB);
       break;
 
@@ -246,10 +255,10 @@ function handleOperationKeys(key) {
       break;
     case "*":
     case "x":
-      setOperator("×");
+      setOperator(MULTIPLY_SYMBOL);
       break;
     case "/":
-      setOperator("÷");
+      setOperator(DIVIDE_SYMBOL);
       break;
   }
   updateDisplay();
