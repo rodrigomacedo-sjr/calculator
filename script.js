@@ -47,11 +47,11 @@ function handleDecimal() {
 
 function handleBackspace() {
   if (operator === undefined && numberA != 0) {
-    numberA = numberA.split("").slice(0, -1).join("");
+    numberA = String(numberA).split("").slice(0, -1).join("");
   } else if (operator !== undefined && numberB === undefined) {
     operator = undefined;
   } else {
-    numberB = numberB.split("").slice(0, -1).join("");
+    numberB = String(numberB).split("").slice(0, -1).join("");
   }
 }
 
@@ -204,6 +204,64 @@ function updateDisplay() {
   const display = document.querySelector(".display");
   display.textContent = `${numberA ? numberA : 0} ${operator ? operator : ""} ${numberB ? numberB : ""}`;
 }
+
+/*
+ *  Keyboard support
+ */
+const VALID_OPERATION_KEYS = ["+", "-", "*", "/", "%"];
+
+const OTHER_VALID_KEYS = ["=", "Enter", "Backspace", "c"];
+
+function keyboardHandler(event) {
+  key = event.key;
+  switch (key) {
+    case NUMPAD.find((x) => x == key):
+      handleNumpad(key);
+      updateDisplay();
+      break;
+    case VALID_OPERATION_KEYS.find((x) => x == key):
+      handleOperationKeys(key);
+      break;
+    case OTHER_VALID_KEYS.find((x) => x == key):
+      handleOtherValidKeys(key);
+      break;
+  }
+}
+
+function handleOperationKeys(key) {
+  switch (key) {
+    case "+":
+    case "-":
+    case "%":
+      setOperator(key);
+      break;
+    case "*":
+    case "x":
+      setOperator("×");
+      break;
+    case "/":
+      setOperator("÷");
+      break;
+  }
+  updateDisplay();
+}
+
+function handleOtherValidKeys(key) {
+  switch (key) {
+    case "Backspace":
+      handleBackspace();
+      break;
+    case "Enter":
+    case "=":
+      calculate();
+      break;
+    case "c":
+      reset();
+  }
+  updateDisplay();
+}
+
+document.addEventListener("keyup", keyboardHandler);
 
 /*
  *  Setup
