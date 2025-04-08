@@ -20,15 +20,20 @@ function validateOperator(opr) {
 }
 
 function handleNumpad(but) {
-  if (but === ".") handleDecimal();
-  else if (but === "←") handleBackspace();
-  else handleNums(but);
+  if (but === ".") {
+    handleDecimal();
+  } else if (but === "←") {
+    handleBackspace();
+  } else if (but.length) {
+    console.log(String(but).length < 10)
+    handleNums(but);
+  }
 }
 
 function handleNums(num) {
-  if (operator === undefined && (numberA != 0 || num != 0)) {
+  if (operator === undefined) {
     numberA = numberA ? numberA + num : num;
-  } else if (operator != undefined && (numberB != 0 || num != 0)) {
+  } else {
     numberB = numberB ? numberB + num : num;
   }
 }
@@ -95,8 +100,8 @@ function invertSignal() {
 /*
  *  Draw calculator
  */
-const NUMPAD = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "←", "0", "."];
-const UTILS = ["C", "÷", "±", "×", "%", "-", "=", "+"];
+const NUMPAD = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "←", "0", "."];
+const UTILS = ["AC", "÷", "±", "×", "%", "-", "=", "+"];
 
 function drawCalculator() {
   drawNumpad();
@@ -121,6 +126,9 @@ function drawUtils() {
     let button = document.createElement("button");
     button.textContent = x;
     button.className = "utils-button";
+    if (["AC", "±", "%"].includes(x)) {
+      button.classList.add("other-utils");
+    }
     utils.appendChild(button);
   }
 }
@@ -132,8 +140,7 @@ function setupNumsButtonLogic() {
   let numbers = document.querySelector(".numbers");
 
   numbers.addEventListener("click", (e) => {
-    console.log(e.target.textContent.length);
-    if (e.target.textContent.length != 1) handleNumpad(e.target.textContent);
+    handleNumpad(e.target.textContent);
   });
 }
 
@@ -151,7 +158,7 @@ function setupUtilsButtonLogic() {
 
 function processUtil(util) {
   switch (util) {
-    case "C":
+    case "AC":
       reset();
       break;
     case "±":
@@ -211,7 +218,7 @@ function updateDisplay() {
  */
 const VALID_OPERATION_KEYS = ["+", "-", "*", "/", "%"];
 
-const OTHER_VALID_KEYS = ["=", "Enter", "Backspace", "c"];
+const OTHER_VALID_KEYS = ["=", "Enter", "Backspace", "a", "c"];
 
 function keyboardHandler(event) {
   key = event.key;
@@ -256,6 +263,7 @@ function handleOtherValidKeys(key) {
     case "=":
       calculate();
       break;
+    case "a":
     case "c":
       reset();
   }

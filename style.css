@@ -1,34 +1,31 @@
+* {
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+}
+
 body {
   height: 97vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-button {
-  font-size: 2rem;
+  background-color: black;
 }
 
 .calculator {
-  width: 30%;
+  width: 90%;
   height: 70%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
-  padding: 1% px;
-
-  border: 2px solid black;
-  border-radius: 1%;
-
-  background-color: lightgray;
 }
 
 .display {
-  width: 90%;
+  width: 80%;
   height: 20%;
 
   display: flex;
@@ -36,15 +33,14 @@ button {
   align-items: center;
 
   font-size: 9vh;
-
-  background-color: whitesmoke;
 }
 
 .keypad {
-  width: 90%;
+  width: 80%;
   height: 80%;
 
   display: flex;
+  gap: 0.7rem;
 }
 
 .numbers {
@@ -53,6 +49,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  gap: 0.7rem;
 }
 
 .utils {
@@ -61,23 +58,37 @@ button {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  gap: 0.7rem;
 }
 
 .numbers button {
-  width: 33.33%;
-  height: 25%;
+  width: 27%;
+  flex-grow: 1;
 
-  border-radius: 10%;
-
-  background-color: gray;
+  background-color: #2a2a2c;
 }
 
-.utils button {
-  width: 50%;
-  height: 25%;
+.utils-button {
+  width: 42%;
+  flex-grow: 1;
 
-  border-radius: 10%;
-
-  background-color: orange;
+  background-color: #ff9f0a;
 }
 
+button {
+  font-size: 5vh;
+
+  border: black solid 0px;
+  border-radius: 48px;
+
+  height: 20%;
+}
+
+button:hover {
+  opacity: 90%;
+  transition: opacity 0.2s;
+}
+
+.other-utils {
+  background-color: #5c5c5f;
+}
