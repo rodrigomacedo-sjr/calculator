@@ -132,7 +132,8 @@ function setupNumsButtonLogic() {
   let numbers = document.querySelector(".numbers");
 
   numbers.addEventListener("click", (e) => {
-    handleNumpad(e.target.textContent);
+    console.log(e.target.textContent.length);
+    if (e.target.textContent.length != 1) handleNumpad(e.target.textContent);
   });
 }
 
