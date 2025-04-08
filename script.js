@@ -24,8 +24,7 @@ function handleNumpad(but) {
     handleDecimal();
   } else if (but === "←") {
     handleBackspace();
-  } else if (but.length) {
-    console.log(String(but).length < 10)
+  } else if (but.length < 10) {
     handleNums(but);
   }
 }
@@ -55,8 +54,10 @@ function handleBackspace() {
     numberA = String(numberA).split("").slice(0, -1).join("");
   } else if (operator !== undefined && numberB === undefined) {
     operator = undefined;
-  } else {
+  } else if (numberB) {
     numberB = String(numberB).split("").slice(0, -1).join("");
+  } else {
+    operator = undefined;
   }
 }
 

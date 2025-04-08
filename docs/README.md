@@ -25,8 +25,9 @@ JavaScript, problem solving. Basic styling.
 - [x] Keyboard support
 
 ## Personal Extra
-- [ ] Style
-- [ ] Phone responsive
+
+- [x] Style
+- [x] Phone responsive
 
 ## Bug fixes / Small improvements
 
@@ -39,6 +40,7 @@ JavaScript, problem solving. Basic styling.
 - [ ] After pressing `=`, pressing a number resets the state
 - [x] After pressing `=`, pressing an operator reuses the result
 - [ ] Clean operator logic. Avoid hard values
+- [ ] Clean CSS. Avoid repetition
 - [x] Clean `setNumber` function. Make it readable
 
 # Planning
