@@ -26,9 +26,9 @@ function handleNumpad(but) {
 }
 
 function handleNums(num) {
-  if (operator === undefined) {
+  if (operator === undefined && (numberA != 0 || num != 0)) {
     numberA = numberA ? numberA + num : num;
-  } else {
+  } else if (operator != undefined && (numberB != 0 || num != 0)) {
     numberB = numberB ? numberB + num : num;
   }
 }
