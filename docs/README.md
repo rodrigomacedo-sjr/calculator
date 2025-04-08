@@ -35,6 +35,7 @@ JavaScript, problem solving. Basic styling.
 - [x] Divide by 0 errors
 - [x] Result behaviour with new operations
 - [x] Typing multiple zeroes behaviour is weird
+- [ ] Remove left zeroes
 - [ ] After pressing `=`, pressing a number resets the state
 - [x] After pressing `=`, pressing an operator reuses the result
 - [ ] Clean operator logic. Avoid hard values

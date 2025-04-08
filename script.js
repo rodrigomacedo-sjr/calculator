@@ -202,7 +202,7 @@ function calculate() {
  */
 function updateDisplay() {
   const display = document.querySelector(".display");
-  display.textContent = `${numberA ? numberA : 0} ${operator ? operator : ""} ${numberB ? numberB : ""}`;
+  display.textContent = `${numberA ? Number(numberA) : 0} ${operator ? operator : ""} ${numberB ? Number(numberB) : ""}`;
 }
 
 /*
