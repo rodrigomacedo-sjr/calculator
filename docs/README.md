@@ -22,7 +22,7 @@ JavaScript, problem solving. Basic styling.
 
 - [x] Decimal point
 - [x] Backspace button
-- [ ] Keyboard support
+- [x] Keyboard support
 
 ## Personal Extra
 - [ ] Style
@@ -36,7 +36,7 @@ JavaScript, problem solving. Basic styling.
 - [x] Result behaviour with new operations
 - [ ] Typing multiple zeroes behaviour is weird
 - [ ] After pressing `=`, pressing a number resets the state
-- [ ] After pressing `=`, pressing an operator reuses the result
+- [x] After pressing `=`, pressing an operator reuses the result
 - [ ] Clean operator logic. Avoid hard values
 - [x] Clean `setNumber` function. Make it readable
 
