@@ -62,24 +62,23 @@ body {
 
 .numbers button {
   width: 27%;
-  flex-grow: 1;
 
   background-color: #2a2a2c;
 }
 
 .utils-button {
   width: 42%;
-  flex-grow: 1;
 
   background-color: #ff9f0a;
 }
 
 button {
   font-size: 5vh;
+  flex-grow: 1;
 
   border: black solid 0px;
   border-radius: 48px;
-
+  
   height: 20%;
 }
 
